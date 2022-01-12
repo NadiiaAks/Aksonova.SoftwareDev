@@ -10,6 +10,8 @@ namespace Domain
    {
 
         public decimal MonthBonus => 20000;
+
+        public decimal TotalPay { get;}
         public Manager(string name, List<TimeRecord> timeRecords) : base(name, 200000, timeRecords)
         {
             decimal payPerHour = MonthSalary / Settings.WorkHoursInMonth;
@@ -22,13 +24,18 @@ namespace Domain
             {
                 if(timeRecord.Hours <= Settings.WorkHourInDay)
                 {
-                    totalPay = timeRecord.Hours * payPerHour;
+                    totalPay += timeRecord.Hours * payPerHour;
                 }
                 else //overworking
                 {
                     totalPay += Settings.WorkHourInDay * payPerHour + bonusPerDay;
                 }
             }
+
+            TotalPay = totalPay;
         }
+
+
+
    }
 }

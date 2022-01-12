@@ -1,5 +1,6 @@
 ﻿using Domain;
 using System;
+using System.Collections.Generic;
 
 namespace SoftwareDevConsole
 {
@@ -7,8 +8,7 @@ namespace SoftwareDevConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            
+
         }
     }
 }
