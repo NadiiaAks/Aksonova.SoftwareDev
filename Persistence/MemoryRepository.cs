@@ -12,17 +12,33 @@ namespace Persistence
     {
         public List<TimeRecord> Emploees()
         {
-            throw new NotImplementedException();
+            return new List<TimeRecord>()
+            {
+                new TimeRecord (DateTime.Now.AddDays(-3), "Ivanov",8,"test message 1"),
+                new TimeRecord (DateTime.Now.AddDays(-3), "Petrov",8,"test message 2"),
+                new TimeRecord (DateTime.Now.AddDays(-2), "Ivanov",10,"test message 3"),
+                new TimeRecord (DateTime.Now.AddDays(-2), "Petrov",8,"test message 4")
+            };
         }
 
         public List<TimeRecord> Freelancers()
         {
-            throw new NotImplementedException();
+            return new List<TimeRecord>()
+            {
+                new TimeRecord (DateTime.Now.AddDays(-3), "Smit",8,"test message 1"),
+                new TimeRecord (DateTime.Now.AddDays(-3), "Adams",8,"test message 2"),
+                new TimeRecord (DateTime.Now.AddDays(-2), "Smit",10,"test message 3"),
+                new TimeRecord (DateTime.Now.AddDays(-2), "Adams",8,"test message 4")
+            };
         }
 
         public List<TimeRecord> Managers()
         {
-            throw new NotImplementedException();
+            return new List<TimeRecord>()
+            {
+                new TimeRecord (DateTime.Now.AddDays(-3), "Petrov",8,"test message 1"),
+                new TimeRecord (DateTime.Now.AddDays(-2), "Petrov",10,"test message 2")
+            };
         }
 
         public List<TimeRecord> ReportGet(UserRole userRole, DateTime? from = null, DateTime? to = null)
@@ -52,7 +68,14 @@ namespace Persistence
 
         public List<User> Users()
         {
-            throw new NotImplementedException();
+            return new List<User>()
+            {
+                new User ("Ivanov", UserRole.Emploee),
+                new User ("Petrov", UserRole.Emploee),
+                new User ("Smit", UserRole.Freelancer),
+                new User ("Adams", UserRole.Freelancer),
+                new User ("Petrov", UserRole.Manager)
+            };
         }
     }
 }
