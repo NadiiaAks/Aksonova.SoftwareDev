@@ -7,6 +7,8 @@ namespace Persistence
 {
     public interface IRepository
     {
+        List<User> Users(); // List of users
+
         /// <summary>
         /// Method for creating users
         /// </summary>
@@ -34,6 +36,10 @@ namespace Persistence
         /// <returns></returns>
         List<TimeRecord> ReportGet(UserRole userRole, DateTime? from = null, DateTime? to = null);
         List<TimeRecord> ReportGetByUser (string name, UserRole userRole, DateTime? from = null, DateTime? to = null);
+
+        List<TimeRecord> Emploees();
+        List<TimeRecord> Managers();
+        List<TimeRecord> Freelancers();
 
 
     }
