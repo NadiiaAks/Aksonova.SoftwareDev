@@ -14,7 +14,7 @@ namespace Persistence
         /// </summary>
         /// <param name="name"></param>
         /// <param name="userRole"></param>
-        User UserCreate (UserRole userRole, string name);
+        bool UserCreate (UserRole userRole, string name);
 
         /// <summary>
         /// Method for reading users
@@ -40,7 +40,6 @@ namespace Persistence
         List<TimeRecord> Emploees();
         List<TimeRecord> Managers();
         List<TimeRecord> Freelancers();
-
 
     }
 }
