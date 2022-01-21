@@ -91,14 +91,27 @@ namespace Persistence
 
         }
 
-        public List<TimeRecord> ReportGetByUser(string name, UserRole userRole, DateTime? from = null, DateTime? to = null)
+        public List<TimeRecord> ReportGetByUser(string userName, UserRole userRole, DateTime? from = null, DateTime? to = null)
         {
-            throw new NotImplementedException();
+            return ReportGet(userRole, from, to).Where(x => x.Name == userName).ToList();
         }
 
         public void TimeRecordAdd(UserRole userRole, TimeRecord timeRecord)
         {
-            throw new NotImplementedException();
+            switch (userRole)
+            {
+                case UserRole.Manager:
+                    managers.Add(timeRecord);
+                    break;
+                case UserRole.Emploee:
+                    emploees.Add(timeRecord);
+                    break;
+                case UserRole.Freelancer:
+                    freelancers.Add(timeRecord);
+                    break;
+                default:
+                    throw new NotImplementedException("Unknown role!");
+            }
         }
 
         public bool UserCreate(UserRole userRole, string name)
