@@ -40,5 +40,16 @@ namespace RepositoryTest
             Assert.IsNotNull(existedUser);
             Assert.IsTrue(existedUser.UserRole == UserRole.Emploee);
         }
+
+        // Test GetUser (user in list or not)
+        [Test]
+        public void UserGetTest()
+        {
+            var existed = memoryRepository.UserGet("Ivanov");
+            var unknown = memoryRepository.UserGet("Unknown user");
+
+            Assert.IsTrue(existed != null);
+
+        }
     }
 }
