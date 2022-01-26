@@ -51,5 +51,20 @@ namespace RepositoryTest
             Assert.IsTrue(existed != null);
 
         }
+
+        //Test for getting a user report
+        [Test]
+        public void ReportGetByUserTest()
+        {
+            var reportList = memoryRepository.ReportGetByUser("Petrov", UserRole.Emploee, null, null);
+            var sampleList = new List<TimeRecord>()
+            {
+                new TimeRecord (DateTime.Now.Date.AddDays(-3), "Petrov",8,"test message 2"),
+                new TimeRecord (DateTime.Now.Date.AddDays(-2), "Petrov",8,"test message 4")
+            };
+
+            Assert.IsTrue(Enumerable.SequenceEqual(reportList, sampleList, new TimeRecordComparer()));
+
+        }
     }
 }
