@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Persistence
 {
-    class MemoryRepository : IRepository
+    public class MemoryRepository : IRepository
     {
 
         #region Fake Data

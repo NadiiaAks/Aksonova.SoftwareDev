@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Emploee : Staff
+    public class Emploee : Staff
     {
         public Emploee(string name, List<TimeRecord> timeRecords) : base(name, 120000, timeRecords)
         {

@@ -3,7 +3,7 @@ using Domain;
 using System;
 using System.Collections.Generic;
 
-namespace SoftwareDevTests
+namespace PersonsTest
 {
     public class Tests
     {
