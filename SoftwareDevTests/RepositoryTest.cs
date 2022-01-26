@@ -28,5 +28,17 @@ namespace RepositoryTest
             Assert.IsNotNull(newUser);
             Assert.IsTrue(newUser.UserRole == UserRole.Emploee);
         }
+
+        //Test for adding an existing employee
+        [Test]
+        public void UserCreateEmploeeExisted()
+        {
+            bool isCreated = memoryRepository.UserCreate(UserRole.Emploee, "Ivanov");
+            var existedUser = memoryRepository.Users().FirstOrDefault(x => x.Name == "Ivanov");
+
+            Assert.IsTrue(!isCreated);
+            Assert.IsNotNull(existedUser);
+            Assert.IsTrue(existedUser.UserRole == UserRole.Emploee);
+        }
     }
 }
